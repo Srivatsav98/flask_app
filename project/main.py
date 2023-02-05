@@ -12,4 +12,4 @@ def index():
 @login_required
 def profile():
     
-    return render_template('profile.html',count=current_user.count, filename=current_user.filename, fname=current_user.fname,lname=current_user.lname, email=current_user.email, loggedin=current_user.is_authenticated)
+    return render_template('profile.html',count=current_user.count, fname=current_user.fname,lname=current_user.lname, email=current_user.email, loggedin=current_user.is_authenticated)
