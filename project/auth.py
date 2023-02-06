@@ -49,8 +49,8 @@ def signup_post():
     time_stamp = calendar.timegm(current_GMT)
     if f.filename!="" and f.filename!=None:
         filename=str(time_stamp)+'_'+f.filename
-        f.save('static/'+filename)
-        with open('static/'+filename) as f:
+        f.save('/home/ubuntu/flask_app/project/'+filename)
+        with open('/home/ubuntu/flask_app/project/'+filename) as f:
             text = f.read()
             count=len(text.split())
         
