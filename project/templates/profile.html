@@ -12,7 +12,7 @@
     <br>
     {% if filename!="" and filename!=None %}
         <div>number of words in the file are {{count}}</div>
-        <a href="{{ url_for('', filename=filename) }}" download><button>download</button></a>
+        <a href="{{filename }}" download><button>download</button></a>
     {% endif %}
    
 </h1>
