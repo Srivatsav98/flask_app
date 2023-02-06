@@ -44,8 +44,15 @@ def signup_post():
     password = request.form.get('password')
     count=0
     filename=""
+    f = request.files['file']
     current_GMT = time.gmtime()
     time_stamp = calendar.timegm(current_GMT)
+    if f.filename!="" and f.filename!=None:
+        filename=str(time_stamp)+'_'+f.filename
+        f.save('static/'+filename)
+        with open('static/'+filename) as f:
+            text = f.read()
+            count=len(text.split())
         
     user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
 
@@ -72,4 +79,3 @@ def signup_post():
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
-
